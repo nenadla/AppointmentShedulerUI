@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+
+.edit-background {
+    background: linear-gradient(135deg, #8B0000, #E8B17A, #2E2E2E);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #f5f5f5; /* Svetla boja teksta */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.add-background {
+    background: linear-gradient(135deg, #6F4C3E, #C0C0C0, #2E2E2E);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #f5f5f5; /* Svetla boja teksta */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.list-background {
+    background: linear-gradient(135deg, #3A5B29, #A8B8A0, #2E2E2E);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* Dodaj razmak unutar kontejnera */
+    font-family: Arial, sans-serif;
+    color: #f5f5f5; /* Svetla boja teksta */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.table {
+    width: 100%; /* Puni širinu kontejnera */
+    border-collapse: collapse; /* Spoji ivice */
+    margin-top: 20px; /* Razmak od ostalih elemenata */
+    border-radius: 8px; /* Zaobljeni uglovi */
+    overflow: hidden; /* Sakrij deo koji izlazi iz okvira */
+    background-color: #4a3f35; /* Pozadina tabele, tamna nijansa koja se uklapa */
+}
+
+.table th,
+.table td {
+    text-align: left; /* Poravnanje teksta levo */
+    padding: 12px; /* Veći unutrašnji razmak za bolju preglednost */
+    color: #ffffff; /* Bele slova za td i th */
+}
+
+.table thead {
+    background-color: #5c4b43; /* Tamnija boja zaglavlja */
+    font-weight: bold; /* Podebljan font za zaglavlje */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #6a5d54; /* Svetlija tamna boja za parne redove */
+}
+
+.table tbody tr:hover {
+    background-color: #7b6d61; /* Svetlija boja kada se pređe mišem */
+}

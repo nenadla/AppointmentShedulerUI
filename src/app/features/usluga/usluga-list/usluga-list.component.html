@@ -1,0 +1,31 @@
+<div class="list-background">
+    <h1 class="mt-3"> Lista usluga</h1>
+
+    <div class="d-flex justify-content-end mt-3">
+        <a [routerLink]="['/admin/usluga/add']" class="btn btn-light"> Dodaj uslugu </a>
+    </div>
+
+    <ng-container *ngIf="usluge">
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>Naziv usluge</th>
+                    <th>Trajanje</th>
+                    <th>Cijena</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usluga of usluge">
+                    <td>{{usluga.name}}</td>
+                    <td>{{usluga.duration}} minuta</td>
+                    <td>{{usluga.price}} dinara</td>
+                    <td>
+                        <button type="submit" class="btn btn-light" [routerLink]="['/admin/usluga', usluga.id]">Izmeni</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+</div>
+
