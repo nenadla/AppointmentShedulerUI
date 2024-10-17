@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AddAppointmentRequest } from '../models/add-appointment-request.model';
 import { Observable } from 'rxjs';
-import { Appointment } from '../models/Appointment.model';
+
 import { environment } from 'src/environments/environment';
+import { Appointment } from '../models/appointment.model';
 
 @Injectable({
   providedIn: 'root'

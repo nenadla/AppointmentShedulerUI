@@ -7,13 +7,17 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { UslugaListComponent } from './features/usluga/usluga-list/usluga-list.component';
 import { AddUslugaComponent } from './features/usluga/add-usluga/add-usluga.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { EditUslugaComponent } from './features/usluga/edit-usluga/edit-usluga.component';
 import { AddUserComponent } from './features/user/add-user/add-user.component';
 import { UserListComponent } from './features/user/user-list/user-list.component';
 import { UpdateUserComponent } from './features/user/update-user/update-user.component';
 import { AddAppointmentComponent } from './features/appointment/add-appointment/add-appointment.component';
 import { AppointmentListComponent } from './features/appointment/appointment-list/appointment-list.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CalendarComponent } from './features/calendar/calendar/calendar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -26,13 +30,15 @@ import { AppointmentListComponent } from './features/appointment/appointment-lis
     UserListComponent,
     UpdateUserComponent,
     AddAppointmentComponent,
-    AppointmentListComponent
+    AppointmentListComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

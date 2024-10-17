@@ -1,41 +1,14 @@
 <div class="list-background">
     <h1 class="mt-3"> PREGLED TERMINA </h1>
 
-    <div class="d-flex justify-content-end mt-3">
-        <a [routerLink]="['/appointment/add']" class="btn btn-light"> Zakaži Termin </a>
+    <div class="d-flex justify-content-end mt-3 mb-3">
+      <a  class="btn btn-light"> Zakaži Termin </a>
     </div>
 
-        <ng-container *ngIf="appoimtments">
-            <table class="table mt-3">
-                <thead>
-                    <tr>
-                        <th>Start-End</th>
-                        <th>Usluga</th>
-                        <th>Korisničko ime</th>
-                        <th>Telefon</th>
-                        <th>E-mail</th>
-                        <th>Broj Usluga</th>
-                        <th>Broj Izmjena</th>
-                        <th>Broj Otkazivanja</th>
-                        <th> </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let appointment of appoimtments">
-                        <td>{{appointment.startTime}}-{{appointment.endTime}}</td>
-                        <td>{{appointment.serviceName}}</td>
-                        <td>{{appointment.username}}</td>
-                        <td>{{appointment.phone}}</td>
-                        <td>{{appointment.email}}</td>
-                        <td>{{appointment.counter}}</td>
-                        <td>{{appointment.edited}}</td>
-                        <td>{{appointment.cancelled}}</td>
-                        <td>
-                            <button type="submit" class="btn btn-light" [routerLink]="['/admin/user', appointment.appointmentId]">Izmeni</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </ng-container>
+   <app-calendar></app-calendar>
 
+
+    <ng-template #eventTitleTemplate let-event="event">
+      <span>{{ event.title }}</span>
+    </ng-template>
 </div>
