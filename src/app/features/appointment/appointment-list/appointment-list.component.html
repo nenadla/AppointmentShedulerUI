@@ -2,13 +2,11 @@
     <h1 class="mt-3"> PREGLED TERMINA </h1>
 
     <div class="d-flex justify-content-end mt-3 mb-3">
-      <a  class="btn btn-light"> Zakaži Termin </a>
+      <a  class="btn btn-warning" [routerLink]="['/appointment/add']"> Zakaži Termin </a>
     </div>
 
    <app-calendar></app-calendar>
 
 
-    <ng-template #eventTitleTemplate let-event="event">
-      <span>{{ event.title }}</span>
-    </ng-template>
+    
 </div>

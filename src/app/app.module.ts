@@ -16,6 +16,7 @@ import { AddAppointmentComponent } from './features/appointment/add-appointment/
 import { AppointmentListComponent } from './features/appointment/appointment-list/appointment-list.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarComponent } from './features/calendar/calendar/calendar.component';
+import { UpdateAppointmentComponent } from './features/appointment/update-appointment/update-appointment.component';
 
 
 
@@ -31,7 +32,8 @@ import { CalendarComponent } from './features/calendar/calendar/calendar.compone
     UpdateUserComponent,
     AddAppointmentComponent,
     AppointmentListComponent,
-    CalendarComponent
+    CalendarComponent,
+    UpdateAppointmentComponent
   ],
   imports: [
     BrowserModule,

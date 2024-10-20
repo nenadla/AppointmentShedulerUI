@@ -8,6 +8,7 @@ import { UserListComponent } from './features/user/user-list/user-list.component
 import { UpdateUserComponent } from './features/user/update-user/update-user.component';
 import { AppointmentListComponent } from './features/appointment/appointment-list/appointment-list.component';
 import { AddAppointmentComponent } from './features/appointment/add-appointment/add-appointment.component';
+import { UpdateAppointmentComponent } from './features/appointment/update-appointment/update-appointment.component';
 
 const routes: Routes = [
 {
@@ -41,6 +42,10 @@ const routes: Routes = [
 {
   path: 'appointment/add',
   component: AddAppointmentComponent
+},
+{
+  path: 'appointment/:id',
+  component: UpdateAppointmentComponent
 }
 
 

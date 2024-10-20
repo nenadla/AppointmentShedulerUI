@@ -21,4 +21,8 @@ getAllAppointments(): Observable<Appointment[]>{
   return this.http.get<Appointment[]>(`${environment.apiBaseUrl}/api/Appointment`);
 }
 
+getAppointmentBiId(id: string): Observable<Appointment>{
+  return this.http.get<Appointment>(`${environment.apiBaseUrl}/api/Appointment/${id}`);
+}
+
 }

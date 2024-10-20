@@ -1,2 +1,25 @@
 <full-calendar [options]="calendarOptions"></full-calendar>
 
+<div class="modal fade" id="eventDetailsModal" tabindex="-1" aria-labelledby="eventDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eventDetailsModalLabel" >DETALJNIJE O DOGAĐAJU</h5>
+        </div>
+        <div class="modal-body">
+          <p><strong>Korisnik:</strong> {{ selectedEvent?.username }}</p>
+          <p><strong>Usluga:</strong> {{ selectedEvent?.serviceName }}</p>
+          <p><strong>Broj usluga:</strong> {{ selectedEvent?.counter }}</p>
+          <p><strong>Broj izmena:</strong> {{ selectedEvent?.edited }}</p>
+          <p><strong>Broj otkazivanja:</strong> {{ selectedEvent?.cancelled }}</p>
+          <p><strong>Vreme:</strong> {{ selectedEvent?.time }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-warning " (click)="handleEditClick()">Izmeni</button>
+          <button type="button" class="btn btn-danger" >Obriši</button>
+          <button type="button" class="btn btn-modal-close" data-bs-dismiss="modal">Zatvori</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

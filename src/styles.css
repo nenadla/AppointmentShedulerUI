@@ -41,20 +41,73 @@
 
 .table th,
 .table td {
-    text-align: left; /* Poravnanje teksta levo */
-    padding: 12px; /* Veći unutrašnji razmak za bolju preglednost */
-    color: #ffffff; /* Bele slova za td i th */
+    text-align: left; 
+    padding: 12px; 
+    color: #ffffff; 
 }
 
 .table thead {
-    background-color: #5c4b43; /* Tamnija boja zaglavlja */
-    font-weight: bold; /* Podebljan font za zaglavlje */
+    background-color: #5c4b43; 
+    font-weight: bold; 
 }
 
 .table tbody tr:nth-child(even) {
-    background-color: #6a5d54; /* Svetlija tamna boja za parne redove */
+    background-color: #6a5d54; 
 }
 
 .table tbody tr:hover {
-    background-color: #7b6d61; /* Svetlija boja kada se pređe mišem */
+    background-color: #7b6d61;
 }
+.add-appointment-background {
+    display: flex;
+    height: 100vh; 
+    background: linear-gradient(to right, #e0e0e0, #b3b3b3);
+  }
+  
+  .form-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+
+  
+  .image-container {
+    flex: 1; 
+    background-image: url('/assets/images/BerberskiKutak.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9; 
+  }
+
+  .modal-content {
+    background-color: #343a40;
+    color: white;
+}
+
+.modal-header {
+    border-bottom: 1px solid #495057;
+    align-items: center;
+}
+.modal-title {
+    text-align: center;
+    width: 100%;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    color: white;
+}
+
+.modal-footer .btn-modal-close {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-footer .btn-modal-close:hover {
+    background-color: #0056b3;
+}
+
+  
+  
