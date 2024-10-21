@@ -1,3 +1,6 @@
+declare var bootstrap: any;
+
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { User } from '../../user/models/user.model';
 import { Usluga } from '../../usluga/models/usluga.model';
@@ -35,7 +38,7 @@ export class AddAppointmentComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-
+  
     this.userService.getAllUsers().subscribe({
       next: (response) => {
         this.users = response;
@@ -61,7 +64,7 @@ export class AddAppointmentComponent implements OnInit, OnDestroy {
     if (this.usluge) {
       const selectedService = this.usluge.find(service => service.id === serviceId);
       if (selectedService) {
-        this.model.duration = selectedService.duration;  // Postavljanje trajanja iz usluge
+        this.model.duration = selectedService.duration;  
       }
     } else {
       console.error('Usluge not loaded');

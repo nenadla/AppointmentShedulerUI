@@ -1,39 +1,43 @@
-<div class="add-appointment-background">
-  <div class="form-container">
+<div class="add-background">
     <h1 class="pt-3 pb-3">Dodaj Termin</h1>
-
+  
     <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+      <!-- Dropdown lista za korisnike -->
       <div class="mt-2">
         <label class="form-label">Korisnik</label>
         <select class="form-control" [(ngModel)]="model.userId" name="userId">
           <option *ngFor="let user of users" [value]="user.id">{{ user.username }}</option>
         </select>
       </div>
-
+  
+      <!-- Dropdown lista za usluge -->
       <div class="mt-2">
         <label class="form-label">Usluga</label>
         <select class="form-control" [(ngModel)]="model.serviceId" name="servisId" (change)="onServiceChange(model.serviceId)">
           <option *ngFor="let service of usluge" [value]="service.id">{{ service.name }}</option>
         </select>
       </div>
-
+  
+      
       <div class="mt-2">
         <label class="form-label">Vreme</label>
         <input type="datetime-local" id="startTime" class="form-control" name="startTime" [(ngModel)]="model.startTime">
       </div>
-
+  
+    
       <div class="mt-2">
         <label class="form-label">Trajanje (min)</label>
-        <input type="number" id="duration" class="form-control" name="duration" [(ngModel)]="model.duration">
+        <input type="number" id="duration" class="form-control" name="duration" [(ngModel)]="model.duration" >
       </div>
-
+  
+      <!-- Input za radnika -->
       <div class="mt-2">
         <label class="form-label">Radnik</label>
         <input type="text" id="worker" class="form-control" name="worker" [(ngModel)]="model.worker">
       </div>
-
+  
+      <!-- Dugme za submit -->
       <button type="submit" class="btn btn-primary mt-3">Sačuvaj</button>
     </form>
   </div>
-  <div class="image-container"></div> <!-- Ovaj div služi za sliku -->
-</div>
+  

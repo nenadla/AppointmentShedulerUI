@@ -64,6 +64,7 @@ export class CalendarComponent implements OnInit {
     };
 
     this.appointmentService.getAllAppointments().subscribe(appointments => {
+      //console.log('Appointments received in component:', appointments);
       this.updateEvents(appointments);
     });
   }
@@ -122,6 +123,34 @@ export class CalendarComponent implements OnInit {
     }
     this.router.navigate(['/appointment', this.selectedEvent.id]);
   }
+  refreshCalendarEvents() {
+    this.appointmentService.getAllAppointments().subscribe(appointments => {
+      this.updateEvents(appointments);
+    });
+  }
+  
+  onDelete() {
+    
+    this.appointmentService.deleteAppointmentById(this.selectedEvent.id).subscribe({
+      next: (response) => {
+       
+        const modalElement = document.getElementById('eventDetailsModal');
+        const modalInstance = bootstrap.Modal.getInstance(modalElement!);
+        if (modalInstance) {
+          modalInstance.hide(); 
+        }
+  
+        this.refreshCalendarEvents();
+        this.router.navigateByUrl('/appointment');
+      },
+      error: (error) => {
+        
+        console.error('Greška pri brisanju termina:', error);
+        alert('Došlo je do greške prilikom brisanja termina. Pokušajte ponovo.');
+      }
+    });
+  }
+  
 
 
 

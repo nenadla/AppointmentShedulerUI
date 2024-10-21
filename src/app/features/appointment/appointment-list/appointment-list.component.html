@@ -8,5 +8,7 @@
    <app-calendar></app-calendar>
 
 
-    
+    <ng-template #eventTitleTemplate let-event="event">
+      <span>{{ event.title }}</span>
+    </ng-template>
 </div>
