@@ -5,34 +5,34 @@
       <form #form="ngForm" (ngSubmit)="onFormSubmit()">
         <div class="mt-2">
           <label class="form-label">Korisnik</label>
-          <select class="form-control" [(ngModel)]="appointment.userId" name="userId">
+          <select class="form-control" [(ngModel)]="appointment.userId" name="userId" required #appointment.userId="ngModel">
             <option *ngFor="let user of users" [value]="user.id">{{ user.username }}</option>
           </select>
         </div>
   
         <div class="mt-2">
           <label class="form-label">Usluga</label>
-          <select class="form-control" [(ngModel)]="appointment.serviceId" name="serviceId">
+          <select class="form-control" [(ngModel)]="appointment.serviceId" name="serviceId" required #appointment.servisId="ngModel">
             <option *ngFor="let service of usluge" [value]="service.id">{{ service.name }}</option>
           </select>
         </div>
   
         <div class="mt-2">
           <label class="form-label">Vreme</label>
-          <input type="datetime-local" id="startTime" class="form-control" name="startTime" [(ngModel)]="appointment.startTime">
+          <input type="datetime-local" id="startTime" class="form-control" name="startTime" [(ngModel)]="appointment.startTime" required #appointment.startTime="ngModel">
         </div>
   
         <div class="mt-2">
           <label class="form-label">Trajanje (min)</label>
-          <input type="number" id="duration" class="form-control" name="duration" [(ngModel)]="appointment.duration">
+          <input type="number" id="duration" class="form-control" name="duration" [(ngModel)]="appointment.duration" required #appointment.duration="ngModel">
         </div>
   
         <div class="mt-2">
           <label class="form-label">Radnik</label>
-          <input type="text" id="worker" class="form-control" name="worker" [(ngModel)]="appointment.worker">
+          <input type="text" id="worker" class="form-control" name="worker" [(ngModel)]="appointment.worker" required #appointment.worker="ngModel">
         </div>
   
-        <button type="submit" class="btn btn-primary mt-3">Sačuvaj</button>
+        <button type="submit" class="btn btn-primary mt-3" [disabled]="form.invalid">Sačuvaj</button>
       </form>
     </div>
     <div class="image-container"></div>

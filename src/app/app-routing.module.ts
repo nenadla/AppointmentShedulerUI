@@ -9,8 +9,13 @@ import { UpdateUserComponent } from './features/user/update-user/update-user.com
 import { AppointmentListComponent } from './features/appointment/appointment-list/appointment-list.component';
 import { AddAppointmentComponent } from './features/appointment/add-appointment/add-appointment.component';
 import { UpdateAppointmentComponent } from './features/appointment/update-appointment/update-appointment.component';
+import { HomepageComponent } from './core/components/homepage/homepage.component';
 
 const routes: Routes = [
+{
+  path:'',
+  component: HomepageComponent
+},
 {
   path: 'admin/usluga',
   component: UslugaListComponent
@@ -46,7 +51,12 @@ const routes: Routes = [
 {
   path: 'appointment/:id',
   component: UpdateAppointmentComponent
+},
+{
+  path: 'appointment/add/:startTime',
+  component: AddAppointmentComponent
 }
+
 
 
 

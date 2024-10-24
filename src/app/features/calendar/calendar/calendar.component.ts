@@ -19,6 +19,8 @@ export class CalendarComponent implements OnInit {
 
   // Dodaj definiciju selectedEvent
   selectedEvent: any = null;
+  selectedDate: Date | null = null;
+
  
 
   constructor(private appointmentService: AppointmentService,
@@ -27,9 +29,10 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit() {
     this.calendarOptions = {
+      
       plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
       initialView: 'timeGridWeek',
-      locale: 'sr',
+      locale: 'sr-latn',  
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
@@ -40,7 +43,7 @@ export class CalendarComponent implements OnInit {
         {
           daysOfWeek: [1, 2, 3, 4, 5, 6],
           startTime: '09:00',
-          endTime: '20:00'
+          endTime: '20:00',
         }
       ],
       slotMinTime: '09:00:00',
@@ -49,19 +52,33 @@ export class CalendarComponent implements OnInit {
       slotLabelFormat: {
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false
+        hour12: false,
       },
       slotDuration: '00:15:00',
       eventTimeFormat: {
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false
+        hour12: false,
       },
       allDaySlot: false,
       events: [],
-      eventClick: this.handleEventClick.bind(this), 
+      eventClick: this.handleEventClick.bind(this),
       dateClick: this.handleDateClick.bind(this),
+    
+      
+      buttonText: {
+        today: 'Danas',
+        month: 'Mesec',
+        week: 'Sedmica',
+        day: 'Dan',
+        list: 'Lista'
+      },
+     
+    
+     
+      titleFormat: { year: 'numeric', month: 'long' },
     };
+    
 
     this.appointmentService.getAllAppointments().subscribe(appointments => {
       //console.log('Appointments received in component:', appointments);
@@ -86,8 +103,24 @@ export class CalendarComponent implements OnInit {
   }
 
   handleDateClick(info: any) {
-    alert('Clicked on: ' + info.dateStr);
+    this.selectedDate = new Date(info.dateStr); 
+    const modalElement = document.getElementById('addAppointmentModal');
+    const modal = new bootstrap.Modal(modalElement!);
+    modal.show(); 
   }
+
+  handleAddAppointment() {
+    const modalElement = document.getElementById('addAppointmentModal');
+    const modalInstance = bootstrap.Modal.getInstance(modalElement!);
+    if (modalInstance) {
+      modalInstance.hide(); 
+    }
+  
+    this.router.navigateByUrl('/appointment/add');
+    
+  }
+  
+  
 
   handleEventClick(info: any) {
         this.selectedEvent = {
@@ -123,6 +156,8 @@ export class CalendarComponent implements OnInit {
     }
     this.router.navigate(['/appointment', this.selectedEvent.id]);
   }
+
+  
   refreshCalendarEvents() {
     this.appointmentService.getAllAppointments().subscribe(appointments => {
       this.updateEvents(appointments);
